@@ -1,64 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For My Love ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
   <style>
+    /* --- MOBILE-FIRST LAYOUT --- */
     body {
       margin: 0;
-      height: 100vh;
+      padding: 20px 0; /* Space at top and bottom */
+      min-height: 100vh; /* Allow scrolling */
       display: flex;
-      justify-content: center;
+      flex-direction: column; /* Stack boxes vertically */
       align-items: center;
       background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
       font-family: 'Dancing Script', cursive;
-      overflow: hidden;
+      overflow-x: hidden; /* Prevent side scrolling */
     }
-    .container {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(5px);
-      padding: 25px;
-      border-radius: 30px;
-      box-shadow: 0 10px 30px rgba(255, 75, 110, 0.3);
-      text-align: center;
-      z-index: 10;
+
+    /* --- THE BOXES (CONTAINERS) --- */
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 20px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(255, 75, 110, 0.2);
       border: 2px solid white;
-      width: 320px;
+      width: 85%; /* Fits perfectly on any phone screen */
+      max-width: 350px;
+      margin-bottom: 20px; /* Space between the two boxes */
+      text-align: center;
+      box-sizing: border-box;
+      animation: slideUp 1s ease-out;
     }
+
     h2 {
       color: #ff4b6e;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2.2rem;
+      margin: 0 0 15px 0;
     }
+
+    /* --- VIDEO: NO CROPPING --- */
+    .video-wrapper {
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 3px solid white;
+        line-height: 0; /* Removes tiny gap at bottom */
+    }
+
     video {
       width: 100%;
-      border-radius: 20px;
-      border: 4px solid white;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      height: auto; /* Maintains original shape, no cropping */
+      display: block;
     }
-    
-    /* --- YOUR MESSAGE STYLE --- */
-    .my-message {
-      margin-top: 15px;
-      color: #ff4b6e;
-      font-size: 1.6rem;
-      line-height: 1.3;
-      padding: 0 10px;
+
+    /* --- THE MESSAGE: JUSTIFIED --- */
+    .message-text {
+      color: #d63384;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      text-align: justify; /* Justified text as requested */
+      margin: 0;
+      padding: 5px;
     }
 
     p.instruction {
         color: #ff4b6e;
         font-size: 0.9rem;
-        margin-top: 8px;
+        margin-top: 10px;
         font-family: sans-serif;
-        opacity: 0.8;
+        font-weight: bold;
     }
+
+    /* --- ANIMATIONS --- */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .heart {
       position: absolute;
-      color: rgba(255, 75, 110, 0.4);
+      color: rgba(255, 75, 110, 0.3);
       font-size: 20px;
       animation: move 6s linear infinite;
+      z-index: -1; /* Keep hearts behind the cards */
     }
+
     @keyframes move {
       0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
       100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
@@ -66,24 +95,29 @@
   </style>
 </head>
 <body>
+
+  <!-- Floating Hearts Background -->
   <div class="heart" style="left: 10%; animation-delay: 0s;">❤️</div>
   <div class="heart" style="left: 30%; animation-delay: 2s;">💖</div>
   <div class="heart" style="left: 50%; animation-delay: 4s;">❤️</div>
   <div class="heart" style="left: 70%; animation-delay: 1s;">💗</div>
   <div class="heart" style="left: 90%; animation-delay: 3s;">❤️</div>
 
-  <div class="container">
+  <!-- CONTAINER 1: THE VIDEO -->
+  <div class="card">
     <h2>i love you</h2>
-    
-    <video autoplay muted loop playsinline controls>
-      <source src="IMG_4005.MP4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
+    <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="IMG_4005.MP4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
     <p class="instruction">always in all ways!</p>
+  </div>
 
-    <!-- TYPE YOUR MESSAGE HERE -->
-    <div class="my-message">
+  <!-- CONTAINER 2: THE MESSAGE -->
+  <div class="card">
+    <div class="message-text">
       My dearest, precious love,
 
 I’ve been thinking about you so much, especially after watching that video you made before. It reminded me of all the little things, the quiet moments, the laughter, and the warmth that only you bring into my life. It made me realize, all over again, just how incredibly lucky I am to have you.
@@ -100,7 +134,7 @@ Always yours,
 with all my heart
 
     </div>
-
   </div>
+
 </body>
 </html>
