@@ -31,8 +31,8 @@
 
     h2 {
       color: #ff4b6e;
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
 
@@ -42,6 +42,19 @@
       border: 5px solid white;
       border-radius: 20px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    p {
+        color: #ff4b6e;
+        font-size: 1.2rem;
+        margin-top: 10px;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 0.5; }
+        50% { opacity: 1; }
+        100% { opacity: 0.5; }
     }
 
     /* --- FLOATING HEARTS ANIMATION --- */
@@ -74,7 +87,14 @@
 
   <div class="container">
     <h2>i love you</h2>
-    <iframe src="https://drive.google.com/file/d/1ggdUUgtMho_JNIPlNgrbsQ3W-a80EGCi/preview"></iframe>
+    
+    <!-- Updated Link with Autoplay & Mute -->
+    <iframe 
+        src="https://drive.google.com/file/d/1ggdUUgtMho_JNIPlNgrbsQ3W-a80EGCi/preview?autoplay=1&mute=1" 
+        allow="autoplay">
+    </iframe>
+
+    <p>Tap video for sound! 🔊</p>
   </div>
 
 </body>
