@@ -17,7 +17,7 @@
     .container {
       background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(5px);
-      padding: 20px;
+      padding: 25px;
       border-radius: 30px;
       box-shadow: 0 10px 30px rgba(255, 75, 110, 0.3);
       text-align: center;
@@ -30,18 +30,28 @@
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
-    /* THIS IS THE MAGIC PART FOR MOBILE */
     video {
       width: 100%;
       border-radius: 20px;
       border: 4px solid white;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    p {
+    
+    /* --- YOUR MESSAGE STYLE --- */
+    .my-message {
+      margin-top: 15px;
+      color: #ff4b6e;
+      font-size: 1.6rem;
+      line-height: 1.3;
+      padding: 0 10px;
+    }
+
+    p.instruction {
         color: #ff4b6e;
-        font-size: 1.1rem;
-        margin-top: 10px;
+        font-size: 0.9rem;
+        margin-top: 8px;
         font-family: sans-serif;
+        opacity: 0.8;
     }
     .heart {
       position: absolute;
@@ -65,13 +75,32 @@
   <div class="container">
     <h2>i love you</h2>
     
-    <!-- This plays inline, autoplays, and loops! -->
     <video autoplay muted loop playsinline controls>
       <source src="IMG_4005.MP4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
-    <p>Tap to unmute! 🔊</p>
+    <p class="instruction">Tap video for sound! 🔊</p>
+
+    <!-- TYPE YOUR MESSAGE HERE -->
+    <div class="my-message">
+      My dearest, precious love,
+
+I’ve been thinking about you so much, especially after watching that video you made before. It reminded me of all the little things, the quiet moments, the laughter, and the warmth that only you bring into my life. It made me realize, all over again, just how incredibly lucky I am to have you.
+
+You are, without a doubt, the best thing that ever happened to me. And even though I already have you, my heart still chooses you—every single day. That’s why I want to do this properly, sincerely, and from the deepest part of me.
+
+May I court you again?
+
+I want to fall in love with you all over again—slowly, intentionally, and wholeheartedly. I want to relearn your smiles, rediscover what makes your eyes light up, and be someone who continuously earns your love, not just someone who already has it.
+
+You mean more to me than words can ever fully express. You are my comfort, my happiness, my peace, and my greatest blessing. If you’ll let me, I want to keep choosing you, cherishing you, and loving you better each day.
+
+Always yours,
+with all my heart
+
+    </div>
+
   </div>
 </body>
 </html>
